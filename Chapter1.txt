@@ -6,7 +6,7 @@
 
 #Looking for an event ID 5138
 
-$spservers=Get-SPServer | where {$_.Role -ne “Invalid”}
+$spservers=Get-SPServer | where {$_.Role -ne â€œInvalidâ€}
  foreach($spserver in $spservers)
  
 {
@@ -22,7 +22,7 @@ get-winevent -FilterHashtable @{Logname='System';ID=5138}  -MaxEvents 3 | select
 
 #Looking for an event ID 4732
 
-$spservers=Get-SPServer | where {$_.Role -ne “Invalid”}
+$spservers=Get-SPServer | where {$_.Role -ne â€œInvalidâ€}
  foreach($spserver in $spservers)
  
 {
@@ -39,7 +39,7 @@ get-winevent -FilterHashtable @{Logname='Security';ID=4732}  -MaxEvents 4 | sele
 
 #Looking for an event ID 4735
 
-$spservers=Get-SPServer | where {$_.Role -ne “Invalid”}
+$spservers=Get-SPServer | where {$_.Role -ne â€œInvalidâ€}
  foreach($spserver in $spservers)
  
 {
@@ -60,7 +60,7 @@ Get-SPsolution | sort lastoperationendtime | ft name, lastoperationendtime
 
 #Add admin user to all the content databases
 
-Get-SPContentDatabase | Add-SPShellAdmin –UserName Domain\UserName -verbose
+Get-SPContentDatabase | Add-SPShellAdmin â€“UserName Domain\UserName -verbose
 
 ######################
 
@@ -72,7 +72,7 @@ Initialize-SPResourceSecurity
 
 #find account that runs the SharePoint Timer service
 
-gwmi win32_Service -filter "name='sptimerv4' | ft name, startname
+gwmi win32_Service -filter "name='sptimerv4'" | ft name, startname
 
 ######################
 
